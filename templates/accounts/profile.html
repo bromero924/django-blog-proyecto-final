@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Mi Perfil</h2>
+
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<p><strong>Nombre:</strong> {{ user.first_name }}</p>
+<p><strong>Apellido:</strong> {{ user.last_name }}</p>
+
+{% if profile.avatar %}
+<img src="{{ profile.avatar.url }}" alt="'Avatar" width="200">
+{% else %}
+<P>no tienes avatar cargado. </P>
+{% endif%}
+
+<p><strong>Biografía:</strong> {{ profile.bio }}</p>
+<p><strong>Fecha de nacimiento:</strong> {{ profile.birth_date }}</p>
+<p><strong>Link:</strong> {{ profile.link }}</p>
+
+<a href=" {% url 'profile_edit' %} "> editar perfil</a>
+
+
+{% endblock %}

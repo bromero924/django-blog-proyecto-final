@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sabor Santanderiano </title>
+</head>
+
+
+<body>
+    <nav>
+        <a href="{% url 'home' %}"> home </a>
+        <a href="{% url 'about' %}"> about us </a>
+        <a href="{% url 'post_list' %}"> PAGES </a>
+        <a href="{% url 'login' %}"> Login</a>
+        <a href="{% url 'logout' %}"> logout </a>
+        <a href="{% url 'signup' %}"> register </a>
+        <a href="{% url 'inbox' %}"> messages </a>
+
+    </nav>
+    <hr>
+    {% block content%}
+    {% endblock%}
+</body>
+
+</html>

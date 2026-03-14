@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<h3>{{ post.subtitle }}</h3>
+<p>Fecha: {{ post.created_date }}</p>
+<p>Autor: {{ post.author }}</p>
+
+{% if post.image %}
+<img src="{{ post.image.url }}" alt="{{ post.title }}" width="300">
+{% endif %}
+
+<div>
+    {{ post.content|safe }}
+</div>
+
+<br>
+<a href="{% url 'post_list' %}">Volver a páginas</a>
+{% endblock %}
